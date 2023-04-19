@@ -1,3 +1,97 @@
+React Zoom Pan Pinch
+
+import React, { Component } from "react";
+
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+const Example = () => {
+  return (
+    <TransformWrapper>
+      <TransformComponent>
+        <img src="image.jpg" alt="test" />
+      </TransformComponent>
+    </TransformWrapper>
+  );
+};
+
+or
+
+import React, { Component } from "react";
+
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+const Example = () => {
+  return (
+    <TransformWrapper
+      initialScale={1}
+      initialPositionX={200}
+      initialPositionY={100}
+    >
+      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+        <React.Fragment>
+          <div className="tools">
+            <button onClick={() => zoomIn()}>+</button>
+            <button onClick={() => zoomOut()}>-</button>
+            <button onClick={() => resetTransform()}>x</button>
+          </div>
+          <TransformComponent>
+            <img src="image.jpg" alt="test" />
+            <div>Example text</div>
+          </TransformComponent>
+        </React.Fragment>
+      )}
+    </TransformWrapper>
+  );
+};
+
+or
+
+import React, { useRef } from "react";
+import {
+  TransformWrapper,
+  TransformComponent,
+  ReactZoomPanPinchRef,
+} from "react-zoom-pan-pinch";
+
+const Controls = ({ zoomIn, zoomOut, resetTransform }) => (
+  <>
+    <button onClick={() => zoomIn()}>+</button>
+    <button onClick={() => zoomOut()}>-</button>
+    <button onClick={() => resetTransform()}>x</button>
+  </>
+);
+
+const Component = () => {
+  const transformComponentRef = useRef<ReactZoomPanPinchRef | null>(null);
+
+  const zoomToImage = () => {
+    if (transformComponentRef.current) {
+      const { zoomToElement } = transformComponentRef.current;
+      zoomToElement("imgExample");
+    }
+  };
+
+  return (
+    <TransformWrapper
+      initialScale={1}
+      initialPositionX={200}
+      initialPositionY={100}
+      ref={transformComponentRef}
+    >
+      {(utils) => (
+        <React.Fragment>
+          <Controls {...utils} />
+          <TransformComponent>
+            <img src="image.jpg" alt="test" id="imgExample" />
+            <div onClick={zoomToImage}>Example text</div>
+          </TransformComponent>
+        </React.Fragment>
+      )}
+    </TransformWrapper>
+  );
+};
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
