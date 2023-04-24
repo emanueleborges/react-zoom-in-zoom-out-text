@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        EXEMPLO react-zoom-pan-pinch
+        EXEMPLO 1 - react-zoom-pan-pinch
+        <a href='https://prc5.github.io/react-zoom-pan-pinch/' target='_blank'> Demo react-zoom-pan-pinch </a>
+'
         <TransformWrapper
           initialScale={1}
           initialPositionX={200}
@@ -24,6 +26,7 @@ function App() {
               </div>
               <TransformComponent>
               <div>
+
                 <p>Example Text Zoom In Zoom Out</p>
                 <p>Example Text Zoom In Zoom Out</p>
                 <p>Example Text Zoom In Zoom Out</p>
@@ -35,7 +38,9 @@ function App() {
           )}
         </TransformWrapper>
         
-        EXEMPLO react-prismazoom
+        EXEMPLO 2 - react-prismazoom
+        <a href='https://www.npmjs.com/package/react-prismazoom' target='_blank'> Demo react-prismazoom </a>
+
         <PrismaZoom>
           <p>A text that can be zoomed and dragged</p>
           <p>A text that can be zoomed and dragged</p>
