@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import './App.css';
 function App() {
-  const [originalSize, setOriginalSize] = useState(16); // assuming 16 is the original font size
+  const [originalSize, setOriginalSize] = useState(16); 
 
   const [fontSize, setFontSize] = useState(16); 
   useEffect(() => {
@@ -32,8 +32,7 @@ function App() {
                   <p className="list-unstyled mt-3 mb-4">Quickly build an effective pricing table for your potential customers with this Bootstrap example. </p>
                   <p className="list-unstyled mt-3 mb-4">It's built with default Bootstrap components and utilities with little customization.</p>
           </div>
-
-                <div className="container">
+          <div className="container">
                   <div className="card-deck mb-3 text-center">
                     <div className="card mb-4 box-shadow">
                       <div className="card-header">
@@ -119,8 +118,8 @@ function App() {
                       </div>
                     </div>
                   </footer>
-                </div>
-        </p>
+          </div>
+      </p>
     </div>
   );
 }
